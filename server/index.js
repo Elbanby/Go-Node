@@ -67,6 +67,10 @@ http.createServer((req, res) => {
     res.writeHead(200, {"Content-Type": "application/json" });
     res.write(JSON.stringify(getSystemData()));
     res.end(flushUsers());
+  } else {
+    res.writeHead(200, {"Content-Type": "text/plain" });
+    res.write("For the Json Data please use /systeminfo endpoint");
+    res.end();
   }
 }).listen(PORT);
 
